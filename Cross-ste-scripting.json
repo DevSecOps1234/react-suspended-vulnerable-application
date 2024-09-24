@@ -1,0 +1,12 @@
+import React from 'react';
+
+function XSSVulnerableComponent({ userInput }) {
+  return (
+    <div>
+      {/* This is unsafe because it renders raw HTML */}
+      <div dangerouslySetInnerHTML={{ __html: userInput }} />
+    </div>
+  );
+}
+
+export default XSSVulnerableComponent;
